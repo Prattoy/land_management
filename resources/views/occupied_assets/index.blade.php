@@ -16,7 +16,6 @@
         @endif
 
         <div class="form-grid">
-            <!-- Basic Details -->
             <div class="form-group">
                 <label for="employee_code">Employee Code</label>
                 <input type="text" name="employee_code" id="employee_code" class="form-control" value="{{ old('employee_code', $editAsset->employee_code ?? '') }}">
@@ -201,48 +200,30 @@
         <table>
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Emp Code</th>
-                    <th>Emp Name</th>
+                    <th>Employee Name</th>
                     <th>Client Name</th>
                     <th>Mouza</th>
-                    <th>Asset Name</th>
+                    <th>Acre</th>
+                    <th>Asset</th>
                     <th>Asset Type</th>
                     <th>Rental Type</th>
-                    <th>Started</th>
-                    <th>Ended</th>
-                    <th>Khatian</th>
-                    <th>Dag</th>
-                    <th>Payment Term</th>
-                    <th>Periodical</th>
-                    <th>Unit ACR</th>
-                    <th>Unit SFT</th>
-                    <th>Fixed Rent</th>
-                    <th>Received Amt</th>
-                    <th>Due Amt</th>
+                    <th>Periodical Term</th>
+                    <th>Received Amount</th>
+                    <th>Due Amount</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @forelse($assets as $assetItem)
                     <tr>
-                        <td>{{ $assetItem->id }}</td>
-                        <td>{{ $assetItem->employee_code }}</td>
                         <td>{{ $assetItem->employee_name }}</td>
                         <td>{{ $assetItem->client_name }}</td>
                         <td>{{ $assetItem->mouza_name }}</td>
-                        <td>{{ $assetItem->asset_name }}</td>
+                        <td>{{ $assetItem->unit_acr }}</td>
+                        <td style="max-width: 250px; white-space: normal;">{{ $assetItem->asset_name }}</td>
                         <td>{{ $assetItem->asset_type }}</td>
                         <td>{{ $assetItem->rental_type }}</td>
-                        <td>{{ $assetItem->started_at }}</td>
-                        <td>{{ $assetItem->ended_at }}</td>
-                        <td>{{ $assetItem->khatian_no }}</td>
-                        <td>{{ $assetItem->dag_no }}</td>
-                        <td>{{ $assetItem->payment_term }}</td>
                         <td>{{ $assetItem->periodical_term }}</td>
-                        <td>{{ $assetItem->unit_acr }}</td>
-                        <td>{{ $assetItem->unit_sft }}</td>
-                        <td>{{ number_format($assetItem->fixed_rent_amount ?? 0, 2) }}</td>
                         <td>{{ number_format($assetItem->received_amount ?? 0, 2) }}</td>
                         <td>{{ number_format($assetItem->due_amount ?? 0, 2) }}</td>
                         <td>
@@ -263,7 +244,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="20" style="text-align: center; color: var(--text-muted); padding: 2rem;">
+                        <td colspan="11" style="text-align: center; color: var(--text-muted); padding: 2rem;">
                             No occupied assets found. Insert one above!
                         </td>
                     </tr>

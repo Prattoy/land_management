@@ -36,3 +36,22 @@ CREATE TABLE occupied_assets_mig_v1 (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Insert Sample Record
+INSERT INTO occupied_assets_mig_v1 (
+    employee_code, employee_name, client_name, mouza_name, asset_name, 
+    asset_type, rental_type, started_at, ended_at, khatian_no, 
+    dag_no, payment_term, periodical_term, remarks, unit_acr, 
+    unit_sft, rental_term, unit_rate_amount, fixed_rent_amount, onetime_fee, 
+    advance_received_amount, received_amount, due_amount, fine_amount, vat_percent, 
+    received_amount_vat, tax_percent, payment_method, challan_no, po_or_cheque_no, 
+    rate_active_from, rate_active_to, status
+) VALUES (
+    '017267', 'Abdul Karim', 'মোঃ ফরিদ ও অন্যান্য ৭ জন', 'Suza Kathghar', 'সুজাকাঠগড়',
+    'Land(Semi Pakha Khatamo)', 'Lease', TO_DATE('01-01-2026', 'DD-MM-YYYY'), TO_DATE('31-12-2026', 'DD-MM-YYYY'), 'bs/2',
+    '13', 'Prepaid', 'Yearly', 'dhgfh', 1.811,
+    78887.16, 'Unit', 2651904, 44476474, 5474675,
+    42546, 14475, 0, 0, 397785,
+    397785, 53653, 'PO', '47465-7', '204761',
+    TO_DATE('01-01-2026', 'DD-MM-YYYY'), TO_DATE('31-12-2026', 'DD-MM-YYYY'), 'A'
+);

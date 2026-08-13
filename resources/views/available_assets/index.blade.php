@@ -70,20 +70,18 @@
         <table>
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>Mouza</th>
-                    <th>Asset Description</th>
+                    <th>Asset</th>
                     <th>Asset Type</th>
                     <th>Dag No</th>
                     <th>Acre</th>
-                    <th>Sq Ft</th>
+                    <th>Sqft</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @forelse($assets as $assetItem)
                     <tr>
-                        <td>{{ $assetItem->id }}</td>
                         <td>{{ $assetItem->mouza }}</td>
                         <td style="max-width: 300px; white-space: normal;">{{ $assetItem->asset }}</td>
                         <td>{{ $assetItem->asset_type }}</td>
@@ -108,7 +106,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="8" style="text-align: center; color: var(--text-muted); padding: 2rem;">
+                        <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 2rem;">
                             No available assets found. Insert one above!
                         </td>
                     </tr>
